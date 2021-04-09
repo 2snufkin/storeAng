@@ -14,9 +14,11 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import {MatTabsModule} from '@angular/material/tabs';
-import {TabComponent} from './Skeleton/tab/tab.component';
-import { ToolbarComponent } from './Skeleton/toolbar/toolbar.component';
-import { ToolbarBotComponent } from './Skeleton/toolbar-bot/toolbar-bot.component';
+import {TabComponent} from './skeleton/tab/tab.component';
+import { ToolbarComponent } from './skeleton/toolbar/toolbar.component';
+import { ToolbarBotComponent } from './skeleton/toolbar-bot/toolbar-bot.component';
+import { SidebarComponent } from './skeleton/sidebar/sidebar.component';
+import { FooterComponent } from './skeleton/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ToolbarBotComponent } from './Skeleton/toolbar-bot/toolbar-bot.componen
     ProductListComponent,
     TabComponent,
     ToolbarComponent,
-    ToolbarBotComponent
+    ToolbarBotComponent,
+    SidebarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

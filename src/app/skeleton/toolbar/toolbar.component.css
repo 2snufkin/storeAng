@@ -1,0 +1,10 @@
+img {
+  height: 90px;
+}
+#header{
+  display: flex;
+  align-content: space-between;
+}
+#search {
+  padding-left: 60px;
+}

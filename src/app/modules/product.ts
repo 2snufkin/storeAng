@@ -7,7 +7,7 @@ export class Product {
   active: boolean;
   stockUnites: number;
   unitPrice: number;
-  dateCreated:  Date;
+  dateCreated: Date;
   dateModified: Date;
   category: string;
 

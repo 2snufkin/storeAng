@@ -1,4 +1,5 @@
 <div class="container">
-<p *ngFor="let prod of products">{{prod.name}}, {{prod.descreption}}</p>
+  <h1>Products</h1>
+<p *ngFor="let prod of products">{{prod.name}} {{prod.sku}}  {{prod.stockUnites | currency}} {{prod.dateCreated}}</p>
 
 </div>
