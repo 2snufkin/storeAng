@@ -1,0 +1,14 @@
+<div class="container " >
+  <div class="row product-box">
+<!--    <div class="col product">-->
+    <span>
+<img src="{{image}}" alt="productImage" class="img-fluid"  >
+       </span>
+<p class="mat-title ">{{productName}}</p>
+<p>{{description   | slice:0:50}}</p>
+<p>{{price| currency: 'EUR'}}</p>
+  <button mat-raised-button>Buy</button>
+</div>
+</div>
+
+<!--</div>-->
