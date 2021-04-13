@@ -9,7 +9,16 @@ import {Category} from '../../modules/category';
 })
 export class TabComponent implements OnInit {
   categories: Category[];
-
+   navLinks = [
+     {
+    path: 'products',
+    label: 'Our Products'
+  },
+     {
+       path: 'category/1',
+       label: 'Electricity'
+     }
+  ];
   constructor(private categorySrv: CategoryService) {
   }
 

@@ -1,6 +1,19 @@
-<div *ngFor = "let cat of categories">
- <p>{{cat.category}}</p>
+<!--<mat-tab-group>-->
+<!--  <mat-tab label="All"      >    </mat-tab>-->
+<!--  <mat-tab label="Electricity"  >    </mat-tab>-->
+<!--  <mat-tab label="Home">  </mat-tab>-->
+<!--  <mat-tab label="Garden">  </mat-tab>-->
+<!--  <mat-tab label="Clothes">  </mat-tab>-->
 
-</div>
+<!--</mat-tab-group>-->
 
-<!--*ngFor="let cat of categories"-->
+<nav mat-tab-nav-bar mat-align-tabs="center" animationDuration="2000ms">
+  <a mat-tab-link
+     *ngFor="let link of navLinks"
+     [routerLink]="link.path"
+     routerLinkActive #rla="routerLinkActive"
+     [active]="rla.isActive">
+    {{link.label}}
+  </a>
+</nav>
+
