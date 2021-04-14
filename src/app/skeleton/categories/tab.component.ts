@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CategoryService} from '../../services/category.service';
 import {Category} from '../../modules/category';
+import {ProductService} from '../../services/product.service';
 
 @Component({
   selector: 'app-tab',
@@ -9,16 +10,8 @@ import {Category} from '../../modules/category';
 })
 export class TabComponent implements OnInit {
   categories: Category[];
-   navLinks = [
-     {
-    path: 'products',
-    label: 'Our Products'
-  },
-     {
-       path: 'category/1',
-       label: 'Electricity'
-     }
-  ];
+
+
   constructor(private categorySrv: CategoryService) {
   }
 
@@ -29,7 +22,10 @@ export class TabComponent implements OnInit {
   fillCategories(): void {
     this.categorySrv.getCategories().subscribe(data => this.categories = data);
 
-  }
+   }
 
 
 }
+
+
+

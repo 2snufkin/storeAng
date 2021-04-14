@@ -8,18 +8,28 @@ import {map} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ProductService {
-
-  private url = 'http://localhost:8082/api/products';
+  private baseurl = 'http://localhost:8082/api/products';
 
   constructor(private http: HttpClient) {
+
+  }
+
+  // give this function an id as a parameter and it will give you all the products from this id
+  getProductListByCat(currentCategory: number): Observable<Product[]> {
+    const categoryUrl = `${this.baseurl}/search/findProductByCategory_Id?id=${currentCategory}`;
+    return this.http.get<GetResponse>(categoryUrl).pipe(
+      map(response => response._embedded.products)
+    );
+
   }
 
 
   getProductList(): Observable<Product[]> {
-    return this.http.get<GetResponse>(this.url).pipe(
+     return this.http.get<GetResponse>(this.baseurl).pipe(
       map(response => response._embedded.products)
     );
   }
+
 }
 
 interface GetResponse {
@@ -27,7 +37,6 @@ interface GetResponse {
     products: Product[];
   };
 }
-
 
 
 

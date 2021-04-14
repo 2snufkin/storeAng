@@ -1,0 +1,17 @@
+<nav mat-tab-nav-bar   >
+  <a mat-tab-link *ngFor="let link of categories"
+       routerLink  = "/category/{{link.id}}">
+  {{link.category }}   </a>
+</nav>
+ <!--<div *ngFor="let link of categories">-->
+
+
+<!--  <p>{{link.category}}</p>-->
+<!--</div>-->
+
+<p>it works</p>
+<ul   >
+  <li *ngFor="let category of categories;  let i = index">
+  <a  routerLink="/category/{{category.id}}"> {{category.category}}  </a>
+  </li>
+</ul>

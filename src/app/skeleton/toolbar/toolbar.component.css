@@ -6,7 +6,8 @@ img{
 
   }
 .agora{
-  font-size: 4rem;
+  font-size: 3em;
+  color: ghostwhite;
 }
 mat-toolbar{
   display: flex;

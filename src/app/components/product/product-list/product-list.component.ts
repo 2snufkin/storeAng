@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductService} from '../../../services/product.service';
 import {Product} from '../../../modules/product';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -10,20 +10,33 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class ProductListComponent implements OnInit {
 
-  products: Product[];
-  catergoryId: number;
-  const hasId: boolean;
+  constructor(private productS: ProductService, private route: ActivatedRoute, private router: Router) {
+  }
 
-  constructor(private productS: ProductService, private route: ActivatedRoute) {
+  products: Product[];
+  currentID: number;
+  hasId: boolean;
+
+  // When its initialize on a /product/category/2 for example. I want to recuperate the id
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(() => {
+      this.listProducts();
+    });
   }
-   //When its initialize on a /product/category/2 for example. I want to recuperate the id
-   ngOnInit(): void {
-    this.catergoryId = this.route.paramMap.subscribe()
-    this.listProducts();
-  }
-  hasId = this.route.snapshot.paramMap.has(+'id')
-  listProducts() {
-    this.productS.getProductList().subscribe(data => this.products = data);
+
+  listProducts(): void {
+    this.hasId = this.route.snapshot.paramMap.has('id');
+
+    if (this.hasId) {
+      this.currentID = +this.route.snapshot.paramMap.get('id');
+
+      this.productS.getProductListByCat(this.currentID).subscribe(data => this.products = data);
+
+    } else {
+      this.productS.getProductList().subscribe(data => this.products = data);
+    }
+
   }
 
 }
+
