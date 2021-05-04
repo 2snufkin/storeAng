@@ -23,8 +23,8 @@ import {CategoryService} from './services/category.service';
     ToolbarComponent,
     FooterComponent,
     SingleProductComponent,
-    ForOhforComponent
-  ],
+    ForOhforComponent,
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,

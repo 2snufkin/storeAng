@@ -1,7 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {CategoryService} from '../../services/category.service';
 import {Category} from '../../modules/category';
-import {ProductService} from '../../services/product.service';
 
 @Component({
   selector: 'app-tab',
@@ -10,7 +9,7 @@ import {ProductService} from '../../services/product.service';
 })
 export class TabComponent implements OnInit {
   categories: Category[];
-
+  @Input() categoryN: string;
 
   constructor(private categorySrv: CategoryService) {
   }

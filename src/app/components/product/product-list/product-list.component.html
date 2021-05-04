@@ -1,24 +1,22 @@
 <div class="container">
-<p class="mat-headline category">All Our Products</p>
+<p class="mat-headline category"> </p>
 </div>
 
 <div class="container">
   <div class="row">
 
 
-  <app-single-product  *ngFor="let prod of products; let i = index"
-                      [image]="prod.image"
-                      [productName]="prod.name"
-                      [description]="prod.description"
-                      [price]="prod.unitPrice"
- class="col-3 product">
+  <app-single-product  *ngFor="let product of products; let i = index"
+                       [productName]="product.name"
+                      [image]="product.image"
+                      [description]="product.description"
+                       [price]="product.unitPrice" class="col-3 product">
+
 
   </app-single-product>
-    <p>Current Id: {{currentID}}</p>
-    <p>has Id: {{hasId}}</p>
 
-      </div>
-  </div>
+</div>
+   </div>
 
 
 

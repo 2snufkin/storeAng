@@ -2,13 +2,14 @@
   <div class="row product-box">
 <!--    <div class="col product">-->
     <span>
-<img src="{{image}}" alt="productImage" class="img-fluid"  >
+<img src="{{image}}" alt="{{image}}" class="img-fluid"  >
        </span>
-<p class="mat-title ">{{productName}}</p>
-<p class="ellipsis">{{description    }}</p>
+<p class="mat-title " [ngClass]="{'creatSpace': productName.length < 25 }" >{{productName}}</p>
+
+  <p class="ellipsis">{{description    }}</p>
 <p>{{price| currency: 'EUR'}}</p>
-  <button mat-raised-button>Buy</button>
+   <button mat-raised-button>Buy</button>
 </div>
 </div>
 
-<!--</div>-->
+
