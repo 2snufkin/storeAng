@@ -1,17 +1,21 @@
-img{
-  height: 80px;
-}
-.right{
-  justify-content: flex-end;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap');
 
-  }
-.agora{
-  font-size: 3em;
-  color: ghostwhite;
+.example-spacer {
+  flex: 1 1 auto;
 }
-mat-toolbar{
-  display: flex;
- }
-.ele{
-  padding-left: 10rem;
+
+.dodo {
+  height: 60px;
 }
+
+.dodo-word {
+  font-family: 'Roboto', sans-serif;
+  font-size: 3.4em;
+  font-weight: bold;
+}
+
+.location {
+  color: black;
+  margin-right: 55px;
+}
+

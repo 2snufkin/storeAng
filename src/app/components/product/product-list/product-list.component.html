@@ -2,19 +2,20 @@
 <p class="mat-headline category"> </p>
 </div>
 
-<div class="container">
+<div class="container space">
   <div class="row">
 
-
-  <app-single-product  *ngFor="let product of products; let i = index"
+   <app-single-product  *ngFor="let product of products "
                        [productName]="product.name"
+                        [id] ="product.id"
                       [image]="product.image"
                       [description]="product.description"
                        [price]="product.unitPrice" class="col-3 product">
 
 
   </app-single-product>
-
+    <p *ngIf = "products?.length===0" class="alert alert-warning">Sorry, we couldn't find and data</p>
+<router-outlet></router-outlet>
 </div>
    </div>
 

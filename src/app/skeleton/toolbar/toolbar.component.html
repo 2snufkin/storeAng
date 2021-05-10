@@ -1,18 +1,28 @@
-<mat-toolbar color="primary" id="header" class="px-5 space">
-   <span>
-  <a routerLink="products"> <img src="assets/Oryx.png" class="pl-3">  </a>
-      </span>
-     <p class="agora">OryxShop</p>
+<!--<mat-toolbar  id="header" class="px-5 navbar">-->
+<!--   <span>-->
+<!--  <a routerLink="products"> <img src="assets/Oryx.png" class="pl-3">  </a>-->
+<!--      </span>-->
+<!--     <span class="agora">OryxShop</span>-->
 
 
-  <input matInput type="search" placeholder="Search" class="ele">
+<!--  <div  class="d-flex justify-content-end">-->
+<!--    <span class="right "   class="ele" >Orders</span>-->
+<!--  </div>-->
 
-  <button type="submit"><mat-icon>search</mat-icon></button>
+<!--the second-->
 
-  <div  class="d-flex justify-content-end">
-    <span class="right "   class="ele" >Orders</span>
-    <mat-icon aria-hidden="false" aria-label="Example home icon">local_grocery_store</mat-icon>
-  </div>
+ <mat-toolbar  color="primary">
+  <span><img src="https://static.thenounproject.com/png/2349019-200.png" class="dodo" alt="logo"></span>
+  <span class="dodo-word">Dodo</span>
 
+   <span class="location">Paris</span>
 
-</mat-toolbar>
+<!--   search-->
+  <app-search></app-search>
+
+<!--   </div>-->
+   <span class="example-spacer"></span>
+       <mat-icon aria-hidden="false" aria-label="Example home icon">local_grocery_store</mat-icon>
+
+ </mat-toolbar >
+

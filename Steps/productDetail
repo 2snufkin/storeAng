@@ -1,0 +1,9 @@
+Angular
+1. Add detail component //Ok
+2. in the product html add the link to the detail component - test //OK
+3. while clicking on a product there will be a method. it will redirect me to the detail componenet detail/productname/id OK
+3.B: create a method in the service - serachById //OK
+4. in the product detail ngOnint search for the productById- subsceibe to it
+
+5.creat a variable productDet and save the result in this var
+6. in the html desplay the properties of the product

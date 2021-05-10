@@ -8,16 +8,14 @@ import {map} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CategoryService {
-  private categoryUrl = 'http://localhost:8082/api/categories';
+  private categoryUrl = 'http://localhost:8080/api/categories';
 
   constructor(private http: HttpClient) {
   }
 
 
-
-
   getCategories(): Observable<Category[]> {
-     return this.http.get<GetResponseProductCategory>(this.categoryUrl).pipe(
+    return this.http.get<GetResponseProductCategory>(this.categoryUrl).pipe(
       map(response => response._embedded.categories)
     );
   }
@@ -28,7 +26,7 @@ export class CategoryService {
 interface GetResponseProductCategory {
   _embedded: {
     categories: Category[];
-  }
+  };
 }
 
 

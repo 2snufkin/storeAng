@@ -14,6 +14,9 @@ import {MatirialModule} from './matirial/matirial.module';
 import { SingleProductComponent } from './components/product/single-product/single-product.component';
 import { ForOhforComponent } from './skeleton/for-ohfor/for-ohfor.component';
 import {CategoryService} from './services/category.service';
+import { SearchComponent } from './skeleton/search/search.component';
+import { ProductDetailComponent } from './components/product/product-detail/product-detail.component';
+import { ProductComponent } from './components/product/product.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import {CategoryService} from './services/category.service';
     FooterComponent,
     SingleProductComponent,
     ForOhforComponent,
+    SearchComponent,
+    ProductDetailComponent,
+    ProductComponent
    ],
   imports: [
     BrowserModule,

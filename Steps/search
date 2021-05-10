@@ -1,0 +1,14 @@
+Search by keyword:
+SPRINGBOOT:
+1.modify the interface to include search by name //OK
+2. later on - after testing - replace it with service and controller
+
+Angular:
+1. Create a search component //OK
+1A. crate a route for this component /search/:name //OK
+2. integrate it inside the header //OK
+3. HTML: add listeners for onClick and (keyup.enter) //OK
+4. Create and assign them with a method onSearch - test it by printing to the console //OK
+5. communicate  the value of the input to the method //OK
+5. create the method body that will engrave the search title in the url parameters. //OK
+

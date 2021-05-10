@@ -1,13 +1,18 @@
 <div class="container " >
+
   <div class="row product-box">
 <!--    <div class="col product">-->
+    <a routerLink="/products/{{productName}}/{{id}}" style="text-decoration: none;" >
+
     <span>
 <img src="{{image}}" alt="{{image}}" class="img-fluid"  >
-       </span>
-<p class="mat-title " [ngClass]="{'creatSpace': productName.length < 25 }" >{{productName}}</p>
+        </span>
 
-  <p class="ellipsis">{{description    }}</p>
-<p>{{price| currency: 'EUR'}}</p>
+    <p class="mat-title " [ngClass]="{'creatSpace': productName.length < 25 }" >{{productName}}</p>
+   <p class="ellipsis">{{description    }}</p>
+  </a>
+
+  <p>{{price| currency: 'EUR'}}</p>
    <button mat-raised-button>Buy</button>
 </div>
 </div>

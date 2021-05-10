@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import {ProductService} from './services/product.service';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +7,6 @@ import {ProductService} from './services/product.service';
 })
 export class AppComponent {
   title = 'storeAng';
-  constructor(private productService: ProductService) {
-  }
-  ngOnInit() {
-    this.productService.createProductfromApi();
-  }
+
+
 }
