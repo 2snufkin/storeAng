@@ -1,0 +1,15 @@
+<div class=" container d-flex justify-content-start   align-items-center space" >
+  <div class="d-flex flex-row">
+     <span class="p-4">
+ <img src="{{product.image}}" alt="{{product.image}}" class="img-fluid p-4"  >
+        </span>
+  </div>
+  <div class="p-2 product-box">
+    <p class="mat-title p-2  ">{{product.name}}</p>
+    <p  class="p-2">{{product.description    }}</p>
+    <p>{{product?.unitPrice| currency: 'EUR'}}</p>
+    <button mat-raised-button>Buy</button>
+  </div>
+</div>
+
+

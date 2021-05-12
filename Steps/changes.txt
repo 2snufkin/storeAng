@@ -1,0 +1,3 @@
+19:03
+let the displayBycategory return a full object:
+pordcut service: priductcategroy and getlist method

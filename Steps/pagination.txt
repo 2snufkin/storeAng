@@ -1,0 +1,29 @@
+1.test <mat-paginator> import it to your app moudle.  //OK
+2.refactor the interface of get response             //OK
+3. create a method in your service: getCerainPage() to display only page number x
+
+
+ngOnInit
+1. get the page parameters
+"totalElements" : 42,: you have 42 products. but you want the number of product per category -not the total
+"size" : 8, the default . the user could change it
+"totalPages" : 3, how many pages - again. should work per catgory also -
+number: the current page. zero based
+
+
+3. create a method in the service that will take into consideration those parameters
+Method: show me a list by category
+args:which page to display , the category id, how many items per page
+
+show me list by category(category, pagesize,pageindex){
+url = http://localhost:8080/api/products/search/findProductById?id =${id}&page=${page}&size=${size}
+this.displayproducts(url)
+}
+
+4.test this methods with hardcoded //OK
+5. set the page Parameters  to the local variable  //OK
+6. test with dynamic code //work
+
+7. if current > previous I am going up show me +1
+if current < previous I am going down show -1
+if current < pagenumber of pages = do nothing
