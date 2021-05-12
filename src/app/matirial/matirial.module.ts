@@ -6,6 +6,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 const myMatirial =
   [
@@ -15,8 +17,9 @@ const myMatirial =
     MatIconModule,
     MatGridListModule,
     MatInputModule,
-    MatFormFieldModule
-
+    MatFormFieldModule,
+    MatPaginatorModule,
+    BrowserAnimationsModule
   ];
 
 @NgModule({

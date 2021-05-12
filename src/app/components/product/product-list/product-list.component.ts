@@ -2,7 +2,9 @@ import {Component, OnInit, Input} from '@angular/core';
 import {ProductService} from '../../../services/product.service';
 import {Product} from '../../../modules/product';
 import {ActivatedRoute} from '@angular/router';
-import {switchMap} from 'rxjs/operators';
+import {map, switchMap} from 'rxjs/operators';
+import {PageEvent} from '@angular/material/paginator';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-product-list',
@@ -22,21 +24,32 @@ export class ProductListComponent implements OnInit {
   @Input() category: string;
 
   // When its initialize on a /product/category/2 for example. I want to recuperate the id
+// MatPaginator Inputs
+  length = 0;
+  pageSize = 8; // how many per page
+  pageIndex = 0; // current page
+  numberOfPages = 0;
+  pageSizeOptions: number[] = [8, 14, 16, 20];
 
   ngOnInit(): void {
-     this.listProducts().subscribe(data => {
-       this.products = data;
-       console.log(this.products);
 
-     });
+    this.listProducts().pipe(
+      map(responseObg => {
+          this.length = responseObg.page.totalElements;
+          return responseObg._embedded.products;
+        }
+      ))
+      .subscribe(data => this.products = data);
   }
 
 
-  listProducts(): any {
-   return this.route.paramMap.pipe(
+  listProducts(): Observable<GetResponse> {
+    return this.route.paramMap.pipe(
       switchMap(params => {
         if (params.has('id')) {
-          return this.productS.getProductListByCat(+params.get('id'));
+          this.pageIndex = 0;
+          this.currentID = +params.get('id');
+          return this.productS.getProductListByCat(this.currentID, this.pageSize, this.pageIndex);
         }
         if (params.has('name')) {
           return this.productS.getProductListByName(params.get('name'));
@@ -46,32 +59,28 @@ export class ProductListComponent implements OnInit {
       })
     );
   }
+
+
+  handlePageEvent(event: PageEvent): void {
+    this.pageIndex = event.pageIndex;
+    this.pageSize = event.pageSize;
+    this.productS.getProductListByCat(this.currentID, this.pageSize, this.pageIndex)
+      .subscribe(data => {
+        this.products = data._embedded.products;
+
+      });
+  }
 }
 
-
-//
-//
-//   this.hasId = this.route.snapshot.paramMap.has('id');
-//   this.searchMode = this.route.snapshot.paramMap.has('name');
-//      this.currentID = +this.route.snapshot.paramMap.get('id');
-//   if (this.hasId) {
-//     this.productS.getProductListByCat(this.currentID).subscribe(data => this.products = data);
-//   }
-// //if there is a name so only the product the correspond to this name
-//   if (this.searchMode) {
-//     console.log('I am in search mode');
-//     this.searchName = this.route.snapshot.paramMap.get('name');
-//     this.productS.getProductListByName(this.searchName).subscribe(data => this.products = data);
-//
-//   } else {
-//     this.productS.getAllproducts().subscribe(data => {
-//       this.products = data;
-//       console.log(data);
-//
-//     });
-//   }
-//
-// }
-
+interface GetResponse {
+  _embedded: {
+    products: Product[];
+  };
+  page: {
+    totalElements: number,
+    totalPages: number,
+    number: number
+  };
+}
 
 

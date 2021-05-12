@@ -16,7 +16,6 @@ import { ForOhforComponent } from './skeleton/for-ohfor/for-ohfor.component';
 import {CategoryService} from './services/category.service';
 import { SearchComponent } from './skeleton/search/search.component';
 import { ProductDetailComponent } from './components/product/product-detail/product-detail.component';
-import { ProductComponent } from './components/product/product.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +28,6 @@ import { ProductComponent } from './components/product/product.component';
     ForOhforComponent,
     SearchComponent,
     ProductDetailComponent,
-    ProductComponent
    ],
   imports: [
     BrowserModule,

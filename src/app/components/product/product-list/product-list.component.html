@@ -16,6 +16,15 @@
   </app-single-product>
     <p *ngIf = "products?.length===0" class="alert alert-warning">Sorry, we couldn't find and data</p>
 <router-outlet></router-outlet>
+
+
+    <mat-paginator [length]="length"
+                   [pageSize]="pageSize"
+                   [pageIndex]="pageIndex"
+                   [pageSizeOptions]="pageSizeOptions"
+                   (page)="handlePageEvent($event)">
+
+    </mat-paginator>
 </div>
    </div>
 
