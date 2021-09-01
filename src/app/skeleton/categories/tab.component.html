@@ -1,9 +1,7 @@
 <nav mat-tab-nav-bar   >
-  <a mat-tab-link *ngFor="let link of categories"
-     [categoryN] = "link.category"
-       routerLink  = "/category/{{link.id}}"
+  <a mat-tab-link  *ngFor="let category of categories"
+       routerLink  = "/category/{{category.id}}"
     >
-
-  {{link.category }}   </a>
+  {{category.category }}   </a>
 </nav>
 

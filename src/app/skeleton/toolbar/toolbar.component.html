@@ -1,28 +1,16 @@
-<!--<mat-toolbar  id="header" class="px-5 navbar">-->
-<!--   <span>-->
-<!--  <a routerLink="products"> <img src="assets/Oryx.png" class="pl-3">  </a>-->
-<!--      </span>-->
-<!--     <span class="agora">OryxShop</span>-->
-
-
-<!--  <div  class="d-flex justify-content-end">-->
-<!--    <span class="right "   class="ele" >Orders</span>-->
-<!--  </div>-->
-
-<!--the second-->
-
  <mat-toolbar  color="primary">
-  <span><img src="https://static.thenounproject.com/png/2349019-200.png" class="dodo" alt="logo"></span>
-  <span class="dodo-word">Dodo</span>
+   <div class="logodiv" routerLink="/products">
+     <img src="assets/logo.png" class="logoimg" alt="logo">
+   <p class="logo">Eoryx</p>
+   </div>
+      <div class="container search">
+     <app-search class="search"></app-search>
 
-   <span class="location">Paris</span>
 
-<!--   search-->
-  <app-search></app-search>
+      </div>
+   <app-carte   ></app-carte>
 
-<!--   </div>-->
-   <span class="example-spacer"></span>
-       <mat-icon aria-hidden="false" aria-label="Example home icon">local_grocery_store</mat-icon>
+   <app-login-status class="login"></app-login-status>
 
  </mat-toolbar >
 

@@ -5,10 +5,14 @@
         </span>
   </div>
   <div class="p-2 product-box">
-    <p class="mat-title p-2  ">{{product.name}}</p>
-    <p  class="p-2">{{product.description    }}</p>
-    <p>{{product?.unitPrice| currency: 'EUR'}}</p>
-    <button mat-raised-button>Buy</button>
+    <p class="mat-display-1  ">{{product.name}}</p>
+      <p   >{{product.description    }}</p>
+
+    <p class="mat-subheading-2">{{product.unitPrice| currency: 'EUR'}}</p>
+    <hr>
+    <button mat-raised-button	 color="primary"  >Buy</button>
+
+    <button mat-raised-button	 color="primary"  (click)="onAddToCart(product)">Add to cart</button>
   </div>
 </div>
 

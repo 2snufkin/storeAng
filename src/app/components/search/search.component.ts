@@ -1,5 +1,5 @@
-import {Component,  OnInit} from '@angular/core';
-import {ActivatedRoute,  Router} from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -15,7 +15,7 @@ export class SearchComponent implements OnInit {
   }
 
   onSearch(value: string): void {
-    this.router.navigate(['/products', 'search', value]);
+    this.router.navigate(['/products', 'search', value])  ;
 
   }
 }

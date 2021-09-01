@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Category} from '../modules/category';
+import {Category} from '../models/category';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
@@ -13,15 +13,15 @@ export class CategoryService {
   constructor(private http: HttpClient) {
   }
 
-
+  /**
+   * get the categories from the database
+   */
   getCategories(): Observable<Category[]> {
     return this.http.get<GetResponseProductCategory>(this.categoryUrl).pipe(
-      map(response => response._embedded.categories)
-    );
+      map(response => response._embedded.categories));
   }
 
 }
-
 
 interface GetResponseProductCategory {
   _embedded: {

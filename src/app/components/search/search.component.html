@@ -1,0 +1,10 @@
+<div id="custom-search-input">
+  <div class="input-group col-md-12">
+    <input type="text" class="form-control input-lg  " placeholder="Search"   (keyup.enter)="onSearch(search.value)"  #search/>
+    <span class="input-group-btn">
+                        <button class=" mat-raised-button	 btn btn-info btn-lg   " type="button" (click)="onSearch(search.value)">
+                          Search
+                        </button>
+                    </span>
+  </div>
+</div>

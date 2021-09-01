@@ -1,12 +1,10 @@
-<div class="container">
-<p class="mat-headline category"> </p>
-</div>
 
 <div class="container space">
   <div class="row">
 
    <app-single-product  *ngFor="let product of products "
                        [productName]="product.name"
+                        [productObj] = product
                         [id] ="product.id"
                       [image]="product.image"
                       [description]="product.description"
@@ -14,10 +12,8 @@
 
 
   </app-single-product>
-    <p *ngIf = "products?.length===0" class="alert alert-warning">Sorry, we couldn't find and data</p>
+    <p *ngIf = "products?.length===0" class="alert alert-warning">There are no more products in this category</p>
 <router-outlet></router-outlet>
-
-
     <mat-paginator [length]="length"
                    [pageSize]="pageSize"
                    [pageIndex]="pageIndex"
@@ -25,6 +21,10 @@
                    (page)="handlePageEvent($event)">
 
     </mat-paginator>
+
+
+
+
 </div>
    </div>
 

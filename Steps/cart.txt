@@ -1,0 +1,83 @@
+workflow*****************************
+1. create cart status component: display   quantity //ok
+1A: add addtocarte button beneath each pordcut. test it , when clicked - display product name and price //ok
+CARTE DETAIL componenet*************************
+2. carte detail componenet //OK
+
+CARTE SERVICE**********************************
+carte array and subtotal //OK
+I need a cart service with the following methods:
+add item //OK
+delete item //OK
+4. return to 1A and write the method body //OK
+METHOD
+name: onaddTocart()
+args: product object
+return: nothing
+call the carte service
+add this product to the array (carteArray)
+
+
+carteDetail componenet************************************
+1. onNgonit call the service to fill the carte list //OK
+if there is no items and its empty display <p> you have no items in your carte</p> //OK
+2. add /remove items
+remove: remove it from the array
+3. find a way
+
+
+
+*when clicking addTocarte in the product detail, the number above the carte is updated
+I need a reduce method on this array reduce (element.noOfItems => return sum of ....)
+
+Refactor
+1. add method
+in the cart service:when I add to the array I need to check that if the item is there or not
+if not : I add it
+if yes: I dont add it - I just add 1 to its quantity
+
+2. revice the subject lecture
+
+3. update the cart dynamically
+
+
+//Cart Service
+in the service I have a new subject
+subject.next(totalitems)
+subject.asObservable
+in the componenet I subscribe to it on the ngOnint
+
+§§§§§§§§!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+when adding an item to the cart I should call the subjejct.next(carteService.total + 1)
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+3.checkout button
+
+
+20.05 *********************Add*****************************************************************************************
+---where *************           action*****************************
+product-detail                  onAddToCarte(Product)
+                                take the product- transforem into an item
+                                call the cart service that will add it to the local localstorage
+
+carte service                   saveItemLocalStrg(Item)
+                                save to the array - do the logic to see if its there
+                                if its there update the quantity inside the Itemarray
+
+                                if its not there add it to the array
+                                update the CarteArray at the end of the code
+                                write the itemArray to the localhost
+
+20.05 ***********************Remove***************************************************************************************
+---where *************           action*****************************
+carte-item                      onRemove(itemId)
+                                call the cart service that will remove it from the local localstorage
+
+carte service                   removeFromLocalStrg(Item)
+                                -search for its id in the array
+                                if you found it:
+                                -retrive the object unit price and quantity
+                                -substruct the (unitprice *  quantity) from the total price
+                                -substruct the quantity from the totalItems
+                                -remove it from the array
+                                -write the itemArray to the localhost

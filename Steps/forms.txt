@@ -1,0 +1,43 @@
+  Development /////////////////////////////////////////////////////////////////////////////////////
+  1. Generate checkout compt ***
+  2.Create checkoutButton and make it redirect to the component **
+  3. Add support for reactive forms **
+  4. Define the form in the ts file
+  6. Create the HTML template **
+  7. create the submit **
+
+  Development phase 2 //////////////////////////////////////////////////////////////////////////
+  1. Add validators: all is Required **
+  email: use Regex to validate  **
+  2. create getters ***
+  3.creat errors in the html template **
+  4. tailor the error message according to the error using the error object**
+
+    Development phase 3 //////////////////////////////////////////////////////////////////////////
+    1. create a diy validator to check that spaces isn't accepted as valid
+    2. repeat those steps for the other input:
+    a. specify validation rule   b. define getter          c. HTML: display error
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  -dirty: if the user changed the field value,
+  -touched: if the field loses focus. the user exist the field

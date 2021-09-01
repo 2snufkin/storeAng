@@ -8,6 +8,9 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
 
 const myMatirial =
   [
@@ -19,7 +22,11 @@ const myMatirial =
     MatInputModule,
     MatFormFieldModule,
     MatPaginatorModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatBadgeModule,
+    MatTableModule,
+    MatTableModule,
+    MatSortModule
   ];
 
 @NgModule({

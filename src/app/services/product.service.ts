@@ -1,9 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Product} from '../modules/product';
+import {Product} from '../models/product';
 import {map} from 'rxjs/operators';
-import {Page} from '../modules/Page';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +18,8 @@ export class ProductService {
 
 
   /**
-   * Return one Product object
-   * @param id: the Id of the product
+   * Return one Product object according a giving ID
+   * @param: id - the Id of the product
    */
   getProductById(id: number): Observable<Product> {
     const searchByIdURL = `${this.baseurl}/search/findProductById?id=${id}`;
@@ -29,15 +28,26 @@ export class ProductService {
     );
   }
 
-
-  // give this function an id as a parameter and it will give you all the products from this id
+  /**
+   * Get all the products from a certain Category
+   * @param: currentCategory
+   * @param: nOofItems
+   * @param: pageNumber
+   */
   getProductListByCat(currentCategory: number, nOofItems: number, pageNumber: number): Observable<GetResponse> {
     const categoryUrl = `${this.baseurl}/search/findProductByCategory_Id?id=${currentCategory}&page=${pageNumber}&size=${nOofItems}`;
     return this.getProductList(categoryUrl);
   }
 
-  getProductListByName(name: string): Observable<GetResponse> {
-    const searchURL = `${this.baseurl}/search/findProductsByNameContaining?name=${name}`;
+  /**
+   * Search product by its name
+   * @param: name
+   * @param: nOofItems
+   * @param: pageNumber
+   */
+  getProductListByName(name: string, nOofItems: number, pageNumber: number): Observable<GetResponse> {
+    name = name.trim();
+    const searchURL = `${this.baseurl}/search/findProductsByNameContaining?name=${name}&page=${pageNumber}&size=${nOofItems}`;
     return this.getProductList(searchURL);
   }
 
@@ -45,28 +55,6 @@ export class ProductService {
   getAllproducts(): Observable<GetResponse> {
     const getAllURL = this.baseurl;
     return this.getProductList(getAllURL);
-
-  }
-
-   // DELETE
-  getPageParamatersforAll(): Observable<Page> {
-    return this.http.get<GetResponse>(this.baseurl).pipe(
-      map(res => {
-          return res.page;
-        }
-      )
-    );
-  }
-
-         // Delete
-  getPageParamatersforCategory(categoryId: number): Observable<Page> {
-    const categoryUrl = `${this.baseurl}/search/findProductByCategory_Id?id=${categoryId}`;
-    return this.http.get<GetResponse>(categoryUrl).pipe(
-      map(res => {
-          return res.page;
-        }
-      )
-    );
   }
 
   /**
@@ -77,6 +65,9 @@ export class ProductService {
     return this.http.get<GetResponse>(url);
 
   }
+
+
+
 
 
 }

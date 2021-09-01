@@ -8,13 +8,20 @@
 <img src="{{image}}" alt="{{image}}" class="img-fluid"  >
         </span>
 
-    <p class="mat-title " [ngClass]="{'creatSpace': productName.length < 25 }" >{{productName}}</p>
-   <p class="ellipsis">{{description    }}</p>
+    <p class="mat-title ellipsis" [ngClass]="{'creatSpace': productName.length < 25 }"  >{{productName}}</p>
+   <p class="ellipsis">{{description.trim()}}</p>
   </a>
 
   <p>{{price| currency: 'EUR'}}</p>
-   <button mat-raised-button>Buy</button>
-
+    <button mat-raised-button	 color="primary"  type=button (click)="onClick(productObj)">
+     <span  >
+     <mat-icon  >shopping_cart</mat-icon>
+       </span>
+     <span>
+       Add to Cart
+       </span>
+   </button>
+<!--    <hr>-->
 
 </div>
 </div>
